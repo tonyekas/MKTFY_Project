@@ -1,0 +1,50 @@
+version: '3.4'
+
+services:
+  mktfy:
+    image: ${DOCKER_REGISTRY-}mktfy
+    container_name: "mktfy"
+    build:
+      context: .
+      dockerfile: MKTFY/Dockerfile
+    ports:
+      - "33000:80"
+      - "33001:443"
+    environment:
+      - ConnectionStrings__DefaultConnection=Server=mktfy.db;Database=devdb;User Id=devdbuser;password=devdbpassword
+      - Identity__Authority=http://mktfy.auth
+    depends_on:
+      - "mktfy.db"
+
+  mktfy.auth:
+    image: ${DOCKER_REGISTRY-}mktfyauth
+    container_name: "mktfy.auth"
+    build:
+      context: .
+      dockerfile: MKTFY.Auth/Dockerfile
+    ports:
+      - "33005:80"
+      - "33006:443"
+    environment:
+      - ConnectionStrings__DefaultConnection=Server=mktfy.db;Database=devdb;User Id=devdbuser;password=devdbpassword
+      - Identity__Authority=http://mktfy.auth
+    depends_on:
+      - "mktfy.db"
+
+      
+  mktfy.db:
+    restart: on-failure
+    image: "mdillon/postgis:11"
+    container_name: "mktfy.db"
+    environment:
+     - POSTGRES_USER=devdbuser    
+     - POSTGRES_DB=devdb
+     - POSTGRES_PASSWORD=devdbpassword   
+
+    volumes:
+    - mktfy-db:/var/lib/postgresgl/data
+    ports:
+     - "33010:5432"
+
+volumes:
+  mktfy-db:

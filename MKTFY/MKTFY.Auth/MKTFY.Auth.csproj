@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+	<PropertyGroup>
+		<TargetFramework>netcoreapp3.1</TargetFramework>
+		<UserSecretsId>009c2e56-7572-47b9-a19b-8d4e54c1f300</UserSecretsId>
+		<DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="IdentityServer4" Version="4.1.1" />
+		<PackageReference Include="IdentityServer4.AspNetIdentity" Version="4.1.1" />
+		<PackageReference Include="IdentityServer4.EntityFramework" Version="4.1.1" />
+		<PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="3.1.11" />
+		<PackageReference Include="Microsoft.AspNetCore.Identity" Version="2.2.0" />
+		<PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="3.1.11" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\MKTFY.App\MKTFY.App.csproj" />
+		<ProjectReference Include="..\MKTFY.Models\MKTFY.Models.csproj" />
+	</ItemGroup>
+
+</Project>

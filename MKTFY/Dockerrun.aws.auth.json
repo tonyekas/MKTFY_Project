@@ -1,0 +1,13 @@
+{
+  "AWSEBDockerrunVersion": "1",
+  "Image": {
+    "name": "279969617172.dkr.ecr.ca-central-1.amazonaws.com/mktfy-live:auth",
+    "Update": true
+  },
+  "Ports": [
+    {
+      "containerPort": 80,
+      "hostPort": 80
+    }
+  ]
+}
