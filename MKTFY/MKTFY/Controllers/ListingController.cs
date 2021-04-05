@@ -10,12 +10,19 @@ using System.Threading.Tasks;
 
 namespace MKTFY.Controllers
 {
+    /// <summary>
+    /// Get the listing controller
+    /// </summary>
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize(AuthenticationSchemes = "Bearer", Roles = "member")] // This may be removed to allow all users to access service without authorization 
+    [Authorize(AuthenticationSchemes = "Bearer", Roles = "member")] // This may be removed to allow all users to access service without authorization     
     public class ListingController : ControllerBase
     {
         private readonly IListingRepository _listingRepository;
+        /// <summary>
+        /// Listing info
+        /// </summary>
+        /// <param name="listingRepository"></param>
         public ListingController(IListingRepository listingRepository)
         {
             _listingRepository = listingRepository;
@@ -29,7 +36,17 @@ namespace MKTFY.Controllers
             return Ok(new ListingVM(result));
 
         }
-
+        /// <summary>
+        /// Get all listing
+        /// </summary>
+        /// <remarks>Shows all the availaible listing</remarks>
+        /// <returns>
+        /// Array of all listing
+        /// </returns>
+        /// <response code="200">Listing found</response>
+        /// <response code="401">Not currently logged in</response>
+        /// <response code="403">User has no access to stuff</response>
+        /// <response code="500">Server failure, unknown reason</response>
         [HttpGet("getall")]
         public async Task<ActionResult<List<ListingVM>>> GetAll()
         {

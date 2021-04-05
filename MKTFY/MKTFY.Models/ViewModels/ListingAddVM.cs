@@ -5,9 +5,14 @@ namespace MKTFY.Models.ViewModels
 {
     public class ListingAddVM
     {
+        /// <summary>
+        /// Productname of the listed items
+        /// </summary>
         [Required]
         public string ProductName { get; set; }
-
+        /// <summary>
+        /// Displays the description of the item
+        /// </summary>
         [Required]
         public string Description { get; set; }
         [Required]

@@ -1,12 +1,17 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFramework>netcoreapp3.1</TargetFramework>
+		<TargetFramework>netcoreapp3.0</TargetFramework>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+	  <DocumentationFile>C:\Users\tonyekas\Documents\Vog\LaunchPad\GIT\MKTFY_Project\MKTFY\MKTFY.Models\MKTFY.Models.xml</DocumentationFile>
 	</PropertyGroup>
 
 	<ItemGroup>
 	  <PackageReference Include="IdentityModel" Version="5.0.1" />
 	  <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="3.1.11" />
+	  <PackageReference Include="Swashbuckle.AspNetCore" Version="6.1.1" />
 	</ItemGroup>
 
 </Project>

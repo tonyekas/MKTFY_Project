@@ -123,7 +123,7 @@ namespace MKTFY.Controllers
 
             var user = await _userManager.FindByEmailAsync(email);
             if (user == null)
-                return RedirectToAction(nameof(ForgotPasswordConfirmation));
+                return NotFound();//RedirectToAction(nameof(ForgotPasswordConfirmation));
 
             var token = await _userManager.GeneratePasswordResetTokenAsync(user);
             // var link = Url.Action("ResetPassword", "Account", new { token, email = user.Email }, Request.Scheme);
@@ -141,10 +141,10 @@ namespace MKTFY.Controllers
             return Ok($"Please check your email {email} for reset link");
         }
 
-        public IActionResult ForgotPasswordConfirmation()
-        {
-            return BadRequest("User does not exist");
-        }
+        //public IActionResult ForgotPasswordConfirmation()
+        //{
+        //    return BadRequest("User does not exist");
+        //}
 
 
         //// Logout Action if required

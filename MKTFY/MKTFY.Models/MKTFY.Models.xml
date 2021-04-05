@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MKTFY.Models</name>
+    </assembly>
+    <members>
+        <member name="P:MKTFY.Models.ViewModels.ListingAddVM.ProductName">
+            <summary>
+            Productname of the listed items
+            </summary>
+        </member>
+        <member name="P:MKTFY.Models.ViewModels.ListingAddVM.Description">
+            <summary>
+            Displays the description of the item
+            </summary>
+        </member>
+        <member name="M:MKTFY.Models.ViewModels.LoginResponseVM.#ctor(IdentityModel.Client.TokenResponse,MKTFY.Models.ViewModels.UserVM)">
+            <summary>
+                
+            </summary>
+            <param name="tokenResponse"></param>
+            <param name="user"></param>
+        </member>
+        <member name="P:MKTFY.Models.ViewModels.LoginResponseVM.AccessToken">
+            <summary>
+            JWT Token
+            </summary>
+        </member>
+        <member name="P:MKTFY.Models.ViewModels.LoginResponseVM.Expires">
+            <summary>
+            Number of seconds until the access token expires
+            </summary>
+        </member>
+        <member name="P:MKTFY.Models.ViewModels.LoginResponseVM.User">
+            <summary>
+            Additional User data
+            </summary>
+        </member>
+    </members>
+</doc>
