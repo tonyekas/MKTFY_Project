@@ -1,7 +1,7 @@
 {
-  "AWSEBDockerrunVersion": "1",
+  "AWSEbDockerrunVersion": "1",
   "Image": {
-    "name": "279969617172.dkr.ecr.ca-central-1.amazonaws.com/mktfy-live:api",
+    "Name": "279969617172.dkr.ecr.ca-central-1.amazonaws.com/mktfy-live:api",
     "Update": "true"
   },
   "Ports": [
