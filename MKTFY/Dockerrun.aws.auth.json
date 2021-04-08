@@ -10,4 +10,4 @@
       "HostPort": "80"
     }
   ]
-} // may need to incluce true, 80 in ""  as in the api - 279969617172.dkr.ecr.ca-central-1.amazonaws.com/mktfy-live
+}
